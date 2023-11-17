@@ -1,0 +1,183 @@
+{
+    "category": "plugins",
+    "display": "Postmark - Send email ",
+    "fields": {
+        "AAI": {
+            "caption": "From",
+            "doc": "The sender email address. Must have a registered and confirmed Sender Signature.  To include a name, use the format \"Full Name sender@domain.com\" for the address.",
+            "editor": "DynamicValue",
+            "name": "from",
+            "rank": 0,
+            "value": "text"
+        },
+        "AAJ": {
+            "caption": "To",
+            "doc": "Recipient email address. Multiple addresses are comma separated. Max 50.",
+            "editor": "DynamicValue",
+            "name": "to",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAK": {
+            "caption": "Cc",
+            "doc": "Cc recipient email address. Multiple addresses are comma separated. Max 50.",
+            "editor": "DynamicValue",
+            "name": "cc",
+            "optional": true,
+            "rank": 2,
+            "value": "text"
+        },
+        "AAL": {
+            "caption": "Bcc",
+            "doc": "Bcc recipient email address. Multiple addresses are comma separated. Max 50.",
+            "editor": "DynamicValue",
+            "name": "bcc",
+            "optional": true,
+            "rank": 3,
+            "value": "text"
+        },
+        "AAM": {
+            "caption": "Subject",
+            "doc": "Email subject",
+            "editor": "DynamicValue",
+            "name": "subject",
+            "optional": true,
+            "rank": 4,
+            "value": "text"
+        },
+        "AAN": {
+            "caption": "Tag",
+            "doc": "Email tag that allows you to categorize outgoing emails and get detailed statistics.",
+            "editor": "DynamicValue",
+            "name": "tag",
+            "optional": true,
+            "rank": 5,
+            "value": "text"
+        },
+        "AAO": {
+            "caption": "Html Body",
+            "default_val": "",
+            "doc": "If no TextBody specified HTML email message",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "htmlbody",
+            "optional": true,
+            "rank": 7,
+            "value": "text"
+        },
+        "AAP": {
+            "caption": "Text Body",
+            "doc": "If no HtmlBody specified Plain text email message",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "textbody",
+            "optional": true,
+            "rank": 8,
+            "value": "text"
+        },
+        "AAQ": {
+            "caption": "HtmlBody AND/OR TextBody is mandatory",
+            "editor": "Label",
+            "name": "Information1",
+            "rank": 6
+        },
+        "AAR": {
+            "caption": "Reply To",
+            "doc": "Reply To override email address. Defaults to the Reply To set in the sender signature.",
+            "editor": "DynamicValue",
+            "name": "replyto",
+            "optional": true,
+            "rank": 9,
+            "value": "text"
+        },
+        "AAT": {
+            "caption": "Track Opens",
+            "default_val": false,
+            "doc": "Activate open tracking for this email.",
+            "editor": "DynamicValue",
+            "name": "trackopens",
+            "rank": 11,
+            "value": "boolean"
+        },
+        "AAU": {
+            "caption": "Track Links",
+            "default_val": "None",
+            "doc": "Activate link tracking for links in the HTML or Text bodies of this email.",
+            "editor": "Dropdown",
+            "name": "tracklinks",
+            "options": "None,HtmlAndText,HtmlOnly,TextOnly",
+            "rank": 12
+        },
+        "AAV": {
+            "caption": "Message Stream",
+            "default_val": "outbound",
+            "doc": "Set message stream ID that's used for sending. If not provided, message will default to the \"outbound\" transactional stream.",
+            "editor": "DynamicValue",
+            "name": "messagestream",
+            "rank": 17,
+            "value": "text"
+        },
+        "ABB": {
+            "caption": "Headers",
+            "doc": "List of custom headers to include.",
+            "editor": "key_value_list",
+            "name": "headers",
+            "rank": 10,
+            "value": "text"
+        },
+        "ABC": {
+            "caption": "Metadata",
+            "doc": "Custom metadata key/value pairs.",
+            "editor": "key_value_list",
+            "name": "metadata",
+            "rank": 13,
+            "value": "text"
+        },
+        "ABE": {
+            "caption": "Attachment Names",
+            "doc": "List of attachments.  For a single attachment use \":converted to list\".",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attachmentnames",
+            "optional": true,
+            "rank": 14,
+            "value": "text"
+        },
+        "ABF": {
+            "caption": "Attachment Contents",
+            "doc": "Base64",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attachmentcontents",
+            "optional": true,
+            "rank": 15,
+            "value": "text"
+        },
+        "ABG": {
+            "caption": "Attachment Content Types",
+            "doc": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attachmentcontenttypes",
+            "optional": true,
+            "rank": 16,
+            "value": "text"
+        }
+    },
+    "return_value": {
+        "ABp": {
+            "caption": "To",
+            "name": "to",
+            "rank": 0,
+            "value": "text"
+        },
+        "ABq": {
+            "caption": "MessageId",
+            "name": "messageid",
+            "rank": 1,
+            "value": "text"
+        }
+    },
+    "type": "server_side",
+    "use_packages": false
+}

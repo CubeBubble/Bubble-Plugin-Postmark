@@ -1,0 +1,184 @@
+{
+    "category": "plugins",
+    "display": "Create ics file",
+    "fields": {
+        "ABS": {
+            "caption": "Start Time",
+            "doc": "Start date and time (unix format)",
+            "editor": "DynamicValue",
+            "name": "starttime",
+            "rank": 0,
+            "value": "date"
+        },
+        "ABT": {
+            "caption": "End Time",
+            "editor": "DynamicValue",
+            "name": "endtime",
+            "rank": 1,
+            "value": "date"
+        },
+        "ABU": {
+            "caption": "title",
+            "editor": "DynamicValue",
+            "name": "title",
+            "rank": 2,
+            "value": "text"
+        },
+        "ABV": {
+            "caption": "description",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "description",
+            "rank": 3,
+            "value": "text"
+        },
+        "ABW": {
+            "caption": "location",
+            "editor": "DynamicValue",
+            "name": "location",
+            "optional": true,
+            "rank": 4,
+            "value": "geographic_address"
+        },
+        "ABX": {
+            "caption": "url",
+            "editor": "DynamicValue",
+            "name": "url",
+            "optional": true,
+            "rank": 5,
+            "value": "text"
+        },
+        "ABY": {
+            "caption": "status",
+            "default_val": "CONFIRMED",
+            "editor": "Dropdown",
+            "name": "status",
+            "options": "TENTATIVE,CONFIRMED,CANCELLED",
+            "rank": 6
+        },
+        "ABZ": {
+            "caption": "Calendar Name",
+            "editor": "DynamicValue",
+            "name": "calname",
+            "optional": true,
+            "rank": 7,
+            "value": "text"
+        },
+        "ABa": {
+            "caption": "Busy Status",
+            "default_val": "BUSY",
+            "doc": "Used to specify busy status for Microsoft applications, like Outlook",
+            "editor": "Dropdown",
+            "name": "busystatus",
+            "options": "BUSY,FREE,TENTATIVE,OOF",
+            "rank": 8
+        },
+        "ABb": {
+            "caption": "Organizer Type",
+            "editor": "custom_type",
+            "name": "organizertype",
+            "rank": 9
+        },
+        "ABc": {
+            "caption": "Organizer Name",
+            "doc": "Name of the Organizer",
+            "editor": "custom_field_ABb",
+            "field_type_restriction": "text_image_file",
+            "name": "organizername",
+            "rank": 11
+        },
+        "ABd": {
+            "caption": "Organizer Email",
+            "doc": "Email of the Organizer",
+            "editor": "custom_field_ABb",
+            "field_type_restriction": "text_image_file",
+            "name": "organizeremail",
+            "rank": 12
+        },
+        "ABe": {
+            "caption": "Attendee Type",
+            "editor": "custom_type",
+            "name": "attendeetype",
+            "rank": 13
+        },
+        "ABf": {
+            "caption": "Attendees Name",
+            "editor": "custom_field_ABe",
+            "field_list": false,
+            "field_type_restriction": "text_image_file",
+            "name": "attendeename",
+            "rank": 15
+        },
+        "ABg": {
+            "caption": "organizer",
+            "doc": "Event Organizer",
+            "editor": "DynamicValue",
+            "name": "organizer",
+            "rank": 10,
+            "value": "custom_data_ABb"
+        },
+        "ABh": {
+            "caption": "Attendees",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attendees",
+            "rank": 14,
+            "value": "custom_data_ABe"
+        },
+        "ABi": {
+            "caption": "Attendees Email",
+            "editor": "custom_field_ABe",
+            "field_type_restriction": "text_image_file",
+            "name": "attendeeemail",
+            "rank": 16
+        },
+        "ABj": {
+            "caption": "Invite filename",
+            "default_val": "invite",
+            "doc": "Name of the ics file without extension",
+            "editor": "DynamicValue",
+            "name": "filename",
+            "rank": 17,
+            "value": "text"
+        },
+        "ABk": {
+            "caption": "Domain Name",
+            "default_val": "bubbleapps.io",
+            "doc": "Used to generate UID",
+            "editor": "StaticText",
+            "name": "domainname",
+            "rank": 18
+        }
+    },
+    "return_value": {
+        "ABP": {
+            "caption": "data",
+            "is_list": true,
+            "name": "data",
+            "rank": 0,
+            "value": "text"
+        },
+        "ABR": {
+            "caption": "name",
+            "is_list": true,
+            "name": "name",
+            "rank": 1,
+            "value": "text"
+        },
+        "ABl": {
+            "caption": "uid",
+            "name": "uid",
+            "rank": 3,
+            "value": "text"
+        },
+        "ABm": {
+            "caption": "type",
+            "is_list": true,
+            "name": "type",
+            "rank": 2,
+            "value": "text"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}

@@ -1,0 +1,11 @@
+{
+    "categories": {
+        "0": "email"
+    },
+    "description": "Postmark integration for Bubble. The plugin handles sending custom emails, template emails and ICS (calendar) files generation.",
+    "image": "//s3.amazonaws.com/appforest_uf/f1601370450207x962764222559420200/logo.png",
+    "license": "open_source",
+    "link": "https://postmark.com/",
+    "name": "Postmark",
+    "sa_node_version": 18
+}

@@ -1,0 +1,268 @@
+{
+    "category": "plugins",
+    "display": "Postmark - Send email with template",
+    "fields": {
+        "AAI": {
+            "caption": "From",
+            "doc": "The sender email address. Must have a registered and confirmed Sender Signature.  To include a name, use the format \"Full Name sender@domain.com\" for the address.",
+            "editor": "DynamicValue",
+            "name": "from",
+            "rank": 13,
+            "value": "text"
+        },
+        "AAJ": {
+            "caption": "To",
+            "doc": "Recipient email address. Multiple addresses are comma separated. Max 50.",
+            "editor": "DynamicValue",
+            "name": "to",
+            "rank": 14,
+            "value": "text"
+        },
+        "AAK": {
+            "caption": "Cc",
+            "doc": "Cc recipient email address. Multiple addresses are comma separated. Max 50.",
+            "editor": "DynamicValue",
+            "name": "cc",
+            "optional": true,
+            "rank": 15,
+            "value": "text"
+        },
+        "AAL": {
+            "caption": "Bcc",
+            "doc": "Bcc recipient email address. Multiple addresses are comma separated. Max 50.",
+            "editor": "DynamicValue",
+            "name": "bcc",
+            "optional": true,
+            "rank": 16,
+            "value": "text"
+        },
+        "AAN": {
+            "caption": "Tag",
+            "doc": "Email tag that allows you to categorize outgoing emails and get detailed statistics.",
+            "editor": "DynamicValue",
+            "name": "tag",
+            "optional": true,
+            "rank": 17,
+            "value": "text"
+        },
+        "AAR": {
+            "caption": "Reply To",
+            "doc": "Reply To override email address. Defaults to the Reply To set in the sender signature.",
+            "editor": "DynamicValue",
+            "name": "replyto",
+            "optional": true,
+            "rank": 18,
+            "value": "text"
+        },
+        "AAT": {
+            "caption": "Track Opens",
+            "default_val": false,
+            "doc": "Activate open tracking for this email.",
+            "editor": "DynamicValue",
+            "name": "trackopens",
+            "rank": 20,
+            "value": "boolean"
+        },
+        "AAU": {
+            "caption": "Track Links",
+            "default_val": "None",
+            "doc": "Activate link tracking for links in the HTML or Text bodies of this email.",
+            "editor": "Dropdown",
+            "name": "tracklinks",
+            "options": "None,HtmlAndText,HtmlOnly,TextOnly",
+            "rank": 21
+        },
+        "AAV": {
+            "caption": "Message Stream",
+            "default_val": "outbound",
+            "doc": "Set message stream ID that's used for sending. If not provided, message will default to the \"outbound\" transactional stream.",
+            "editor": "DynamicValue",
+            "name": "messagestream",
+            "rank": 26,
+            "value": "text"
+        },
+        "AAc": {
+            "caption": "Template Id",
+            "doc": "The template to use when sending this message. Required if TemplateAlias is not specified.",
+            "editor": "DynamicValue",
+            "name": "templateid",
+            "optional": true,
+            "rank": 1,
+            "value": "text"
+        },
+        "AAd": {
+            "caption": "Template Alias",
+            "doc": "The alias of a template to use when sending this message. Required if TemplateID is not specified.",
+            "editor": "DynamicValue",
+            "name": "templatealias",
+            "optional": true,
+            "rank": 2,
+            "value": "text"
+        },
+        "AAe": {
+            "caption": "Template Model",
+            "doc": "The model to be applied to the specified template to generate HtmlBody, TextBody, and Subject.",
+            "editor": "key_value_list",
+            "name": "templatemodel",
+            "rank": 3,
+            "value": "text"
+        },
+        "AAf": {
+            "caption": "Inline Css",
+            "default_val": true,
+            "doc": "By default, if the specified template contains an HTMLBody, we will apply the style blocks as inline attributes to the rendered HTML content. You may opt-out of this behavior by passing false for this request field.",
+            "editor": "DynamicValue",
+            "name": "inlinecss",
+            "rank": 12,
+            "value": "boolean"
+        },
+        "AAg": {
+            "caption": "TemplateId OR TemplateAlias is mandatory",
+            "editor": "Label",
+            "name": "information1",
+            "rank": 0
+        },
+        "AAm": {
+            "caption": "Object Name",
+            "doc": "",
+            "editor": "DynamicValue",
+            "name": "objectname",
+            "optional": true,
+            "rank": 5,
+            "value": "text"
+        },
+        "AAn": {
+            "caption": "Attribute1 List",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attribute1list",
+            "optional": true,
+            "rank": 7,
+            "value": "text"
+        },
+        "AAo": {
+            "caption": "Attribute2 List",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attribute2list",
+            "optional": true,
+            "rank": 9,
+            "value": "text"
+        },
+        "AAq": {
+            "caption": "Attribute1 Name",
+            "editor": "DynamicValue",
+            "name": "attribute1name",
+            "optional": true,
+            "rank": 6,
+            "value": "text"
+        },
+        "AAr": {
+            "caption": "Attribute2 Name",
+            "editor": "DynamicValue",
+            "name": "attribute2name",
+            "optional": true,
+            "rank": 8,
+            "value": "text"
+        },
+        "AAy": {
+            "caption": "Attribute3 Name",
+            "editor": "DynamicValue",
+            "name": "attribute3name",
+            "optional": true,
+            "rank": 10,
+            "value": "text"
+        },
+        "AAz": {
+            "caption": "Attribute3 List",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attribute3list",
+            "optional": true,
+            "rank": 11,
+            "value": "text"
+        },
+        "ABA": {
+            "caption": "Add an object list to the template model. Use the {{#each objectname}} {{/each}} tags to browse this list.",
+            "editor": "Label",
+            "name": "information2",
+            "rank": 4
+        },
+        "ABH": {
+            "caption": "Headers",
+            "doc": "List of custom headers to include.",
+            "editor": "key_value_list",
+            "name": "headers",
+            "rank": 19,
+            "value": "text"
+        },
+        "ABI": {
+            "caption": "Metadata",
+            "doc": "Custom metadata key/value pairs.",
+            "editor": "key_value_list",
+            "name": "metadata",
+            "rank": 25,
+            "value": "text"
+        },
+        "ABJ": {
+            "caption": "Attachment Names",
+            "doc": "List of attachments.  For a single attachment use \":converted to list\".",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attachmentnames",
+            "optional": true,
+            "rank": 22,
+            "value": "text"
+        },
+        "ABK": {
+            "caption": "Attachment Contents",
+            "doc": "Base64",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attachmentcontents",
+            "optional": true,
+            "rank": 23,
+            "value": "text"
+        },
+        "ABL": {
+            "caption": "Attachment Content Types",
+            "doc": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "attachmentcontenttypes",
+            "optional": true,
+            "rank": 24,
+            "value": "text"
+        },
+        "ABr": {
+            "caption": "Advanced features",
+            "editor": "Label",
+            "name": "sectiontitle",
+            "rank": 27
+        },
+        "ABs": {
+            "caption": "Template Model Object",
+            "doc": "Increment your template model with custom JSON structure",
+            "editor": "DynamicValue",
+            "name": "templateModelObject",
+            "optional": true,
+            "rank": 28,
+            "value": "text"
+        }
+    },
+    "return_value": {
+        "ABn": {
+            "caption": "To",
+            "name": "to",
+            "rank": 0,
+            "value": "text"
+        },
+        "ABo": {
+            "caption": "MessageID",
+            "name": "messageid",
+            "rank": 1,
+            "value": "text"
+        }
+    },
+    "type": "server_side"
+}
